@@ -1,0 +1,69 @@
+/*Selector universal, se le aplica a todo*/
+*{
+    /*Respeta el 50% por mas que se achique la pagina*/
+    box-sizing: border-box;
+} 
+/*Limpiar todo lo que viene por defecto en htm,l*/
+html, body,h1,h2,h5,p{
+    padding: 0;
+    margin: 0;
+}
+body{
+    /*Que todo el contenido del body sea flexible*/
+    display: flex;
+    /*Cambiar el eje de fila a columnas*/
+    flex-direction: column;
+}
+html,body{
+    /*Alto minimo*/
+    min-height: 100%;
+}
+header{
+    background-color: white;
+}
+
+main{
+    background-color: aqua;
+    display: flex;
+    /*para que el contenido fluya hacia abajo cuando achico la pantalla*/
+    flex-wrap: wrap;
+    /*Separar contenedores y dejarle un espacio entre ellos*/
+    gap: 10px;
+}
+
+article{
+    /*para controlar el ancho de cada articulo, EN ESTE CASO LOS DIVIDE EN 2 y 2 (son4)*/
+    /*calc se usa para calcular el espacio que le agrego en el main (ya sea con el gap o cualquier cosa)*/
+    width:100%;
+    background-color: azure;
+    /*Modelo de caja y como se computan los rellenos*/
+    padding: 10%;
+    
+}
+
+footer{
+    background-color: blue;
+}
+
+/*Para que la pagina tenga responsividad(se acompla a celulares, pc o tablet)*/
+/*Cuando todas las pantallas tegan 768px toma estas medidas*/
+@media (min-width:450px){
+    article{
+
+        width:calc(50% - 5px);
+        background-color: azure;
+        /*Modelo de caja y como se computan los rellenos*/
+        padding: 10%;
+        
+    }
+}
+@media (min-width:768px){
+    article{
+
+        width:calc(33% - 5px);
+        background-color: azure;
+        /*Modelo de caja y como se computan los rellenos*/
+        padding: 10%;
+        
+    }
+}
